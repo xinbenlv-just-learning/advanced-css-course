@@ -1,0 +1,16 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;       
+    }
+}
+
+@mixin col-index-of-num($i,$num) {
+    .col-#{$i}-of-#{$num} {
+        width: calc( 
+            #{$i} * (100% - ((#{$num} - 1) * #{$gutter-horizontal})) / #{$num} + 
+            ((#{$i} - 1) * #{$gutter-horizontal})
+        );
+    }
+}
