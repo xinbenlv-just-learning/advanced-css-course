@@ -28,7 +28,7 @@ body {
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
   @media only screen and (max-width: 50em) {
     .container {
-      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(3, min-content); } }
+      grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(3, min-content); } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -142,6 +142,9 @@ body {
   @media only screen and (max-width: 50em) {
     .header {
       grid-column: 1 / -1; } }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      padding: 5rem; } }
   .header__logo {
     height: 3rem;
     justify-self: center; }
@@ -233,8 +236,8 @@ body {
   background-image: linear-gradient(rgba(198, 153, 99, 0.5), rgba(198, 153, 99, 0.5)), url(../img/back.jpg);
   background-size: cover;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   align-items: center; }
   @media only screen and (max-width: 50em) {
     .story__pictures {
@@ -255,24 +258,30 @@ body {
   width: 115%;
   grid-row: 4 / 6;
   grid-column: 4 / 7;
+  z-index: 20;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
   @media only screen and (max-width: 50em) {
     .story__img--2 {
-      width: 100%;
-      grid-row: 1 / -1; } }
+      grid-row: 1 / -1;
+      width: 100%; } }
 
 .story__content {
+  background-color: #f9f7f6;
   grid-column: col-start 5 / full-end;
-  font-style: italic;
-  padding: 6rem 8vh;
-  /*display:flex;
-        padding: 6rem 12rem;
+  padding: 6rem 8vw;
+  /*
+        display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;*/
+        align-items: flex-start;
+        */
   display: grid;
   align-content: center;
   justify-items: start; }
+  @media only screen and (max-width: 50em) {
+    .story__content {
+      grid-column: 1 / -1;
+      grid-row: 5 / 6; } }
 
 .story__text {
   font-size: 1.5rem;
